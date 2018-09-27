@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Giphy API</title>
+    <style type="text/css">
+        button,
+        div,
+        form,
+        input {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Rendered Buttons will get Dumped Here  -->
+        <div id="buttons-view"></div>
+
+        <button data-person="Halle Berry"></button>
+        <form id="movie-form">
+            <label for="movie-input">Add a hollywood actress: </label>
+            <input type="text" id="movie-input"><br>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript">
+                //Initial array of Hollywood actress
+                // Event listener for all button elements
+                $("button").on("click", function () {
+                    // In this case, the "this" keyword refers to the button that was clicked
+                    var person = $(this).attr("data-person");
+                    //This is our API Key
+                    var APIKey = "r2V4rhd8P9BLaz9AZiwcgPcOr0Scq24Q";
+                    // Example queryURL for Giphy API
+                    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+                        person + "&"+APIKey;
+
+                    $.ajax({
+                        url: queryURL,
+                        method: "GET"
+                    }).then(function (response) {
+                        // Storing an array of results in the results variable
+                        var results = response.data;
+                        // Looping through each result item
+                        for (var i = 0; i < results.length; i++) {
+
+                            // Creating and storing a div tag
+                            var person = $("<div>");
+
+                            // Creating a paragraph tag with the result item's rating
+                            var p = $("<p>").text("Rating: " + results[i].rating);
+
+                            // Creating and storing an image tag
+                            var personImage = $("<img>");
+                            // Setting the src attribute of the image to a property pulled off the result item
+                            personImage.attr("src", results[i].images.fixed_height.url);
+
+                            // Appending the paragraph and image tag to the animalDiv
+                            personDiv.append(p);
+                            personDiv.append(personImage);
+
+                            // Prependng the personDiv to the HTML page in the "#gifs-appear-here" div
+                            $("#gifs-appear-here").prepend(personDiv);
+                        }
+                    });
+                });
+            </script>
+    </div>
+</body>
+
+</html>
