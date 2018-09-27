@@ -1,14 +1,13 @@
 //Setup variables
-var apiKey = "Z0wYO4KzueVupwRXOVBmc2K5VNaAZS6w";
+var apiKey = "r2V4rhd8P9BLaz9AZiwcgPcOr0Scq24Q ";
 var buttonArray = ["Dad reflexes", "Karate chop", "Back flip", "Vince Young", "Dallas Cowboys", "Jet Engine"];
 
 //Functions
-	
-	//When you click a button, ajax get the images
+//When you click a button, ajax get the images
 //Main function
-	//populate page with buttons
+//populate page with buttons
 $(document).ready(function(){
-	function displayPlayerInfo(){
+	function displaySingerInfo(){
 		var player = $(this).attr("data-name");
 		var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + player + "&limit=10&offset=0&rating=G&lang=en";		
 		$.ajax({
