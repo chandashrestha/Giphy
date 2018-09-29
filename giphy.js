@@ -2,7 +2,7 @@
 var singers = ["Michael Jackson", "Pearl Jam", "Elvis Presley", "Etta James", "Beyonce"];
 var singerName = $(this).attr("data-name");
 
-$(".singer").on("click", giffy);
+$(".singer").on("click", giphy);
 
 // Function for displaying singers data
 function renderButtons() {
@@ -41,12 +41,12 @@ $("#add-singer").on("click", function (event) {
 
     // Event listener for all button elements
 
-    $(".singer").on("click", giffy);
+    $(".singer").on("click", giphy);
 
 });
 
 
-function giffy() {
+function giphy() {
     // In this case, the "this" keyword refers to the button that was clicked
     var person = $(this).attr("id");
 	//This is our API Key
