@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <!-- <link rel="stylesheet" type="text/css" href="ajax.css"> -->
     <title>Favorite Singers</title>
 </head>
+<div class="container">
 <body>
     <div class="button">
-        <button class="singer" id="Michael Jackson" data-person="Michael Jackson">Michael Jackson</button>
-        <button class="singer" id="Pearl Jam" data-person="Pearl Jam">Pearl Jam</button>
-        <button class="singer" id="Elvis Presley" data-person="Elvis Presley">Elvis Presley</button>
-        <button class="singer" id="Rihanna" data-person="Rihanna">Rihanna</button>
-        <button class="singer" id="Beyonce" data-person="Beyonce">Beyonce</button>
+        <button class="singer btn btn-info" id="Michael Jackson" data-person="Michael Jackson">Michael Jackson</button>
+        <button class="singer btn btn-info" id="Pearl Jam" data-person="Pearl Jam">Pearl Jam</button>
+        <button class="singer btn btn-info" id="Elvis Presley" data-person="Elvis Presley">Elvis Presley</button>
+        <button class="singer btn btn-info" id="Rihanna" data-person="Rihanna">Rihanna</button>
+        <button class="singer btn btn-info" id="Beyonce" data-person="Beyonce">Beyonce</button>
     </div>
     <div class="container">
         <h3>Add your Favorite Singer</h3>
@@ -19,23 +23,24 @@
         <div id="button-view"></div>
         <form id="Singer-form">
             <label for="singer-input"></label>
-            <input type="text" id="singer-input"><br>
+            <input type="text" id="singer-input"><br> 
             <!-- Button triggers new singer to be added -->
-            <button id ="add-singer" type="submit" value="submit">Submit </button>        
+            <button id="add-singer" type="submit" value="submit">Submit </button>
         </form>
         <div id="message"></div>
     </div>
     <div id="gifs-appear-here"></div>
     <!-- <script src="ajax.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+
     <script src="giphy.js"></script>
-        
+
 </body>
+</div>
+
 </html>
 <!-- TO:DO 
 --Change the color of the buttons
 --position the form on far right
 --make the gifhy appear three in a row 
 --Make the previous gifhy not appear-->`
-
